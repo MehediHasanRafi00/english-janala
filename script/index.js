@@ -1,17 +1,17 @@
 const createElement = (arr) => {
   const htmlElement = arr.map((el) => `<span class="btn">${el}</span>`);
-  return(htmlElement.join(" "));
+  return htmlElement.join(" ");
 };
 
-const manageSpinner = (status) =>{
-  if(status == true){
-    document.getElementById("spinner").classList.remove("hidden")
-    document.getElementById("word-container").classList.add("hidden")
-  }else{
-    document.getElementById("word-container").classList.remove("hidden")
-    document.getElementById("spinner").classList.add("hidden")
+const manageSpinner = (status) => {
+  if (status == true) {
+    document.getElementById("spinner").classList.remove("hidden");
+    document.getElementById("word-container").classList.add("hidden");
+  } else {
+    document.getElementById("word-container").classList.remove("hidden");
+    document.getElementById("spinner").classList.add("hidden");
   }
-}
+};
 
 const loadLessons = () => {
   fetch("https://openapi.programming-hero.com/api/levels/all") // promise of response
@@ -38,22 +38,6 @@ const loadLevelWord = (id) => {
     });
 };
 
-// {
-//     "word": "Cautious",
-//     "meaning": "সতর্ক",
-//     "pronunciation": "কশাস",
-//     "level": 2,
-//     "sentence": "Be cautious while crossing the road.",
-//     "points": 2,
-//     "partsOfSpeech": "adjective",
-//     "synonyms": [
-//         "careful",
-//         "alert",
-//         "watchful"
-//     ],
-//     "id": 3
-// }
-
 const loadWordDetail = async (id) => {
   const url = `https://openapi.programming-hero.com/api/word/${id}`;
   const res = await fetch(url);
@@ -66,7 +50,11 @@ const displayWordDetails = (word) => {
   const detailsBox = document.getElementById("details-container");
   detailsBox.innerHTML = `
   <div>
-      <h2 class="text-2xl font-bold">${word.word} (<i class="fa-solid fa-microphone-lines"></i>  :<span class="font-bangla">${word.pronunciation}</span>)</h2>
+      <h2 class="text-2xl font-bold">${
+        word.word
+      } (<i class="fa-solid fa-microphone-lines"></i>  :<span class="font-bangla">${
+    word.pronunciation
+  }</span>)</h2>
     </div>
     <div>
       <h2 class="font-semibold">Meaning</h2>
@@ -153,4 +141,20 @@ const displayLesson = (lessons) => {
 };
 loadLessons();
 
+document.getElementById("btn-search").addEventListener("click", () => {
+    removeActive();
+  const input = document.getElementById("input-search");
+  const searchValue = input.value.trim().toLowerCase();
+
+  fetch("https://openapi.programming-hero.com/api/words/all")
+    .then((res) => res.json())
+    .then((data) => {
+      const allWords = data.data;
+      
+      const filterWords = allWords.filter((word) =>
+        word.word.toLowerCase().includes(searchValue)
+      );
+      displayLevelWord(filterWords);
+    });
+});
 
