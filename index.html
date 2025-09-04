@@ -154,12 +154,17 @@
       <div class="join">
         <div>
           <label class="input validator join-item">
-
-            <input id="input-search" type="text" placeholder=" Search vocabulary now" required />
+            <input
+              id="input-search"
+              type="text"
+              placeholder=" Search vocabulary now"
+              required
+            />
           </label>
-          
         </div>
-        <button id="btn-search" class="btn btn-primary join-item">Search</button>
+        <button id="btn-search" class="btn btn-primary join-item">
+          Search
+        </button>
       </div>
     </section>
     <section id="spinner" class="flex justify-center items-center py-10 hidden">
@@ -177,19 +182,89 @@
       </div>
     </section>
 
-    <!-- Open the modal using ID.showModal() method -->
-    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
     <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
       <div class="modal-box">
         <div id="details-container" class="space-y-5"></div>
         <div class="modal-action">
           <form method="dialog">
-            <!-- if there is a button in form, it will close the modal -->
             <button class="btn">Close</button>
           </form>
         </div>
       </div>
     </dialog>
+
+    <section class="w-11/12 mx-auto space-y-4 mt-40">
+      <h2 class="text-4xl font-bold mb-8 text-center mb-16">
+        <span class="text-[#00bcff]">Frequently</span> Asked Questions
+      </h2>
+      <div class="collapse collapse-plus bg-base-100 border border-base-300">
+        <input type="radio" name="my-accordion-3" checked="checked" />
+        <div class="collapse-title font-semibold">
+          1. How can I start learning English on this website?
+        </div>
+        <div class="collapse-content text-sm text-[#62748E]">
+          You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-base-100 border border-base-300">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title font-semibold">
+          2. Is this website free to use?
+        </div>
+        <div class="collapse-content text-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, accusantium nesciunt ab suscipit quis incidunt ex. Pariatur ipsa vitae vero?
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-base-100 border border-base-300">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title font-semibold">
+          3.  Do I need to create an account?
+        </div>
+        <div class="collapse-content text-sm">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, soluta.
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-base-100 border border-base-300">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title font-semibold">
+          4. How can I build my English vocabulary?
+        </div>
+        <div class="collapse-content text-sm">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, soluta.
+        </div>
+      </div>
+      <div class="collapse collapse-plus bg-base-100 border border-base-300">
+        <input type="radio" name="my-accordion-3" />
+        <div class="collapse-title font-semibold">
+         5. Do you offer certificates for completed courses?
+        </div>
+        <div class="collapse-content text-sm">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores, soluta.
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[#badeff42] mt-60 py-25">
+      <div class="w-11/12 mx-auto flex justify-between items-end">
+          <div>
+            <a href="" class="flex items-center gap-1">
+            <span class="text-lg font-bold">English</span>
+            <img src="./assets/logo.png" alt="" />
+            <span class="text-lg font-bangla font-semibold">জানালা</span>
+          </a>
+          <h2 class="font-medium text-xl my-3 font-bangla text-[#546A7F]">ইংরেজি শিখুন সহজে</h2>
+          <p class="text-[#546A7F]">Providing ED-Tech Applications since 2025</p>
+          </div>
+          <div>
+            <h3 class="font-medium mb-2 text-[#546A7F]">Follow us</h3>
+            <i class="fa-brands fa-square-facebook text-2xl"></i>
+            <i class="fa-brands fa-youtube text-2xl"></i>
+            <i class="fa-brands fa-instagram text-2xl" ></i>
+            <i class="fa-brands fa-github text-2xl"></i>
+          </div>
+      </div>
+
+    </footer>
 
     <script src="./script/index.js"></script>
   </body>
